@@ -23,8 +23,8 @@ RUN apt-get update \
 RUN mkdir wine/
 
 WORKDIR wine/
-#Commented out the below just to save time - use local resources instead
-#RUN wget   http://dl.winehq.org/wine/source/2.0/wine-2.0.2.tar.xz
+
+RUN wget   http://dl.winehq.org/wine/source/2.0/wine-2.0.2.tar.xz
 RUN tar -xf wine-2.0.2.tar.xz
 
 WORKDIR wine-2.0.2/
@@ -36,5 +36,5 @@ RUN make install
 WORKDIR ../../wine/
 
 
-ENV CC="/usr/bin/winegcc" \
-    CXX="/usr/bin/wineg++"
+ENV CC="/usr/local/bin/winegcc" \
+    CXX="/usr/local/bin/wineg++"
