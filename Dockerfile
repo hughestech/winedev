@@ -14,20 +14,20 @@ RUN apt-get update
 ENV HOME="/home/builder"
 RUN mkdir -p $HOME
 
-RUN apt-get install -y ca-certificates
+#RUN apt-get install -y ca-certificates
 
 RUN true \
     && apt-get -qq update \
     && apt-get -qq install -y --no-install-recommends \
-        ca-certificates \
-        libarchive13 \
-        libcurl3 \
+#        ca-certificates \
+#        libarchive13 \
+#        libcurl3 \
         libexpat1 \
-        libjsoncpp1 \
-        librhash0 \
-        libuv1 \
-        make \
-        runit \
+#        libjsoncpp1 \
+#        librhash0 \
+#        libuv1 \
+#        make \
+#        runit \
         zlib1g \
     && rm -rf /var/lib/apt/lists/*
 
