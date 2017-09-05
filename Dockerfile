@@ -4,20 +4,7 @@ FROM 32bit/ubuntu:16.04
 ENV HOME="/home/builder"
 RUN mkdir -p $HOME
 
-RUN true \
-    && apt-get -qq update \
-    && apt-get -qq install -y --no-install-recommends \
-        ca-certificates \
-        libarchive13 \
-        libcurl3 \
-        libexpat1 \
-        libjsoncpp1 \
-        librhash0 \
-        libuv1 \
-        make \
-        runit \
-        zlib1g \
-    && rm -rf /var/lib/apt/lists/*
+
 
 # Disable git warning about detached HEAD.
 RUN buildDeps='git' \
