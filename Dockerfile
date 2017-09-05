@@ -1,6 +1,6 @@
 FROM 32bit/ubuntu:16.04
 
-RUN rm /etc/apt/sources.list
+#RUN rm /etc/apt/sources.list
 
 
 RUN apt-get update
