@@ -15,8 +15,8 @@ ENV HOME="/home/builder"
 RUN mkdir -p $HOME
 
 #RUN apt-get install -y ca-certificates
-RUN apt-get update
-RUN apt-get install -y git
+#RUN apt-get update
+#RUN apt-get install -y git #E: Unable to locate package git
 
 
 
