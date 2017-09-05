@@ -11,11 +11,11 @@ RUN add-apt-repository main -y
 RUN apt-get install wget -y
 
 #https://askubuntu.com/questions/760896/how-can-i-automatically-fix-w-target-packages-is-configured-multiple-times
-#RUN sudo apt install python3-apt -y
-#RUN wget https://raw.githubusercontent.com/davidfoerster/apt-remove-duplicate-source-entries/master/apt-remove-duplicate-source-entries.py
-#RUN chmod +x apt-remove-duplicate-source-entries.p
-#USER root
-#RUN  ./apt-remove-duplicate-source-entries.py
+RUN sudo apt install python3-apt -y
+RUN wget https://raw.githubusercontent.com/davidfoerster/apt-remove-duplicate-source-entries/master/apt-remove-duplicate-source-entries.py
+RUN chmod +x apt-remove-duplicate-source-entries.p
+USER root
+RUN  ./apt-remove-duplicate-source-entries.py
 
 
 ENV HOME="/home/builder"
