@@ -1,4 +1,4 @@
-FROM  mcandre/docker-ubuntu-32bit:latest
+FROM  i386/ubuntu:17.04
 
 ENV HOME="/home/builder"
 RUN mkdir -p $HOME
