@@ -2,6 +2,7 @@ FROM 32bit/ubuntu:16.04
 
 RUN rm /etc/apt/sources.list
 RUN apt-get update
+RUN apt-get install wget -y
 
 #https://askubuntu.com/questions/760896/how-can-i-automatically-fix-w-target-packages-is-configured-multiple-times
 #RUN sudo apt install python3-apt -y
