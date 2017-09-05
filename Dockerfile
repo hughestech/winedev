@@ -4,7 +4,7 @@ RUN rm /etc/apt/sources.list
 
 
 RUN apt-get update
-
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install software-properties-common
 RUN apt-get install software-properties-common python-software-properties -y
 RUN add-apt-repository main -y
 
