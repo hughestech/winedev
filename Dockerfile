@@ -32,12 +32,12 @@ RUN true \
     && rm -rf /var/lib/apt/lists/*
 
 # Disable git warning about detached HEAD.
-RUN buildDeps='git' \
-    && apt-get -qq update \
-    && apt-get -qq install -y $buildDeps --no-install-recommends \
-    && git config --global advice.detachedHead false \
-    && apt-get -qq purge --auto-remove -y $buildDeps \
-    && rm -rf /var/lib/apt/lists/*
+#RUN buildDeps='git' \
+#    && apt-get -qq update \
+#    && apt-get -qq install -y $buildDeps --no-install-recommends \
+#    && git config --global advice.detachedHead false \
+#    && apt-get -qq purge --auto-remove -y $buildDeps \
+#    && rm -rf /var/lib/apt/lists/*
 
 # Build and install ninja from source.
 RUN buildDeps='g++ git python' \
