@@ -1,10 +1,29 @@
 FROM 32bit/ubuntu:16.04
 
+RUN sudo apt install python3-apt -y
+RUN wget https://raw.githubusercontent.com/davidfoerster/apt-remove-duplicate-source-entries/master/apt-remove-duplicate-source-entries.py
+RUN chmod +x apt-remove-duplicate-source-entries.p
+USER root
+RUN  ./apt-remove-duplicate-source-entries.py
+
 
 ENV HOME="/home/builder"
 RUN mkdir -p $HOME
 
-
+RUN true \
+    && apt-get -qq update \
+    && apt-get -qq install -y --no-install-recommends \
+        ca-certificates \
+        libarchive13 \
+        libcurl3 \
+        libexpat1 \
+        libjsoncpp1 \
+        librhash0 \
+        libuv1 \
+        make \
+        runit \
+        zlib1g \
+    && rm -rf /var/lib/apt/lists/*
 
 # Disable git warning about detached HEAD.
 RUN buildDeps='git' \
