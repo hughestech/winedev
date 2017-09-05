@@ -2,9 +2,12 @@ FROM 32bit/ubuntu:16.04
 
 RUN rm /etc/apt/sources.list
 
+
+RUN apt-get update
+
 RUN apt-get install software-properties-common python-software-properties -y
 RUN add-apt-repository main -y
-RUN apt-get update
+
 RUN apt-get install wget -y
 
 #https://askubuntu.com/questions/760896/how-can-i-automatically-fix-w-target-packages-is-configured-multiple-times
