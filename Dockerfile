@@ -1,4 +1,4 @@
-FROM debian:sid
+FROM 32bit/ubuntu:16.04
 
 
 ENV HOME="/home/builder"
@@ -96,7 +96,8 @@ RUN tar -xf wine-2.0.2.tar.xz
 
 WORKDIR wine-2.0.2/
 
-RUN ./configure  --without-x  --without-freetype --enable-win64
+#RUN ./configure  --without-x  --without-freetype --enable-win64
+RUN ./configure  --without-x  --without-freetype
 RUN make
 RUN make install
 
