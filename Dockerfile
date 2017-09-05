@@ -1,10 +1,12 @@
 FROM 32bit/ubuntu:16.04
 
-RUN sudo apt install python3-apt -y
-RUN wget https://raw.githubusercontent.com/davidfoerster/apt-remove-duplicate-source-entries/master/apt-remove-duplicate-source-entries.py
-RUN chmod +x apt-remove-duplicate-source-entries.p
-USER root
-RUN  ./apt-remove-duplicate-source-entries.py
+
+RUN run apt-get update
+#RUN sudo apt install python3-apt -y
+#RUN wget https://raw.githubusercontent.com/davidfoerster/apt-remove-duplicate-source-entries/master/apt-remove-duplicate-source-entries.py
+#RUN chmod +x apt-remove-duplicate-source-entries.p
+#USER root
+#RUN  ./apt-remove-duplicate-source-entries.py
 
 
 ENV HOME="/home/builder"
