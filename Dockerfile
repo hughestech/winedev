@@ -14,6 +14,8 @@ RUN apt-get update
 ENV HOME="/home/builder"
 RUN mkdir -p $HOME
 
+RUN apt-get install -y ca-certificates
+
 RUN true \
     && apt-get -qq update \
     && apt-get -qq install -y --no-install-recommends \
