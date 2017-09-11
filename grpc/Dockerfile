@@ -2,7 +2,7 @@ FROM hughestech/grpcdev:32bit-1.0.0-alpha1
 
 WORKDIR wine/
 
-RUN apt-get install wget flex bison && yum clean all -y
+RUN apt-get install wget flex bison -y
 RUN wget   http://dl.winehq.org/wine/source/2.0/wine-2.0.2.tar.xz
 RUN tar -xf wine-2.0.2.tar.xz
 
